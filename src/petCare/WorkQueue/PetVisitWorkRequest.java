@@ -1,6 +1,8 @@
-package petCare.Pet.WorkQueue;
+package petCare.WorkQueue;
 
-import ChemoCare.Pet.Pet;
+
+
+import petCare.pet.Pet;
 
 public class PetVisitWorkRequest extends WorkRequest {
     private Pet pet;
