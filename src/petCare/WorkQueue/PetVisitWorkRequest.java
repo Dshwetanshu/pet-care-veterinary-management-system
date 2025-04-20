@@ -1,8 +1,6 @@
 package petCare.WorkQueue;
 
-
-
-import petCare.pet.Pet;
+import petCare.Pet.Pet;
 
 public class PetVisitWorkRequest extends WorkRequest {
     private Pet pet;
