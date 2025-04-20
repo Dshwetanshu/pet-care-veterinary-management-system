@@ -1,25 +1,37 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package petCare.Employee;
 
+/**
+ *
+ * @author 
+ */
 public class Employee {
-    private static int count = 1; 
-    private int id;
+    
     private String name;
+    private int id;
+    private static int count = 1;
     private String email;
 
     public Employee() {
-        id = count++;
+        id = count;
+        count++;
+        this.email="makvana.d@northeastern.edu";
     }
 
     public int getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {
@@ -34,4 +46,6 @@ public class Employee {
     public String toString() {
         return name;
     }
+    
+    
 }

@@ -1,17 +1,17 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package petCare.Insurance;
-
-/**
- *
- * @author DWIJ 
- */
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author sid
+ */
 public class InsurancePolicyDirectory {
 
     private List<Insurance> policies = new ArrayList<>();
@@ -23,12 +23,5 @@ public class InsurancePolicyDirectory {
     public void setPolicies(List<Insurance> policies) {
         this.policies = policies;
     }
-
-    public Insurance addPolicy(String name, String company, double coverage, double premium, String terms) {
-        Insurance policy = new Insurance(name, company, coverage);
-        policy.setMonthlyPremium(premium);
-        policy.setPolicyTC(terms);
-        policies.add(policy);
-        return policy;
-    }
+    
 }

@@ -1,58 +1,94 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package petCare.Organization;
 
 import petCare.Employee.EmployeeDirectory;
+import petCare.Role.Role;
+import petCare.UserAccount.UserAccountDirectory;
+import petCare.WorkQueue.WorkQueue;
+import java.util.ArrayList;
 
 /**
  *
- * @author DWIJ
+ * @author jeelpatel
  */
 public abstract class Organization {
-    private String name;
+
+    private String organizationName;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
-    private static int counter = 1;
+    private static int counter = 0;
+    
 
     public enum Type {
-        Admin("Admin Organization"),
-        Accountant("Accountant Organization"),
-        Manager("Manager Organization"),
-        Transport("Transport Organization"),
-        Veterinarian("Veterinarian Organization"),
-        Lab("Lab Organization"),
-        InsuranceAgent("Insurance Agent Organization"),
-        InsurancePolicyPlanner("Insurance Policy Planner Organization"),
-        InsuranceFinanceOrganization("Insurance Finance Organization"),
-        HealthcareOfficer("Healthcare Officer Organization"),
-        Secretary("Secretary Organization"),
-        Treasurer("Treasurer Organization");
+
+        //HealthCenter Organization Types:
+        Admin("Admin Organization"), Doctor("Doctor Organization"), Lab("Lab Organization"), Patient("Patient Organization"), Accountant("Accountant Organization"),
+        //Insurance Organization Types:
+        InsuranceAgent("Insurance Agent Organization"), InsurancePolicyPlanner("Insurance Policy Planning Organization"), InsuranceFinanceOrganization("Insurance Finance Organization"),
+        //Government Organization Types
+        Treasurer("Treasurer Organization"), Secretary("Secretary Organization"), HealthcareOfficer("Healthcare Officer Organization"),
+        //Pharma Organization Types
+        Transport("Transport Organization"), Manager("Manager Organization");
+        
 
         private String value;
-        private Type(String value) { this.value = value; }
-        public String getValue() { return value; }
-        @Override public String toString() { return value; }
+
+        private Type(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
     }
 
     public Organization(String name) {
-        this.name = name;
+        this.organizationName = name;
         workQueue = new WorkQueue();
         employeeDirectory = new EmployeeDirectory();
         userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter++;
+        organizationID = counter;
+        ++counter;
     }
 
-    public abstract Type getType();
+    public abstract ArrayList<Role> getSupportedRole();
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public WorkQueue getWorkQueue() { return workQueue; }
-    public EmployeeDirectory getEmployeeDirectory() { return employeeDirectory; }
-    public UserAccountDirectory getUserAccountDirectory() { return userAccountDirectory; }
-    public int getOrganizationID() { return organizationID; }
-    @Override public String toString() { return name; }
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public String getName() {
+        return organizationName;
+    }
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    public void setName(String name) {
+        this.organizationName = name;
+    }
+
+    public void setWorkQueue(WorkQueue workQueue) {
+        this.workQueue = workQueue;
+    }
+
+    @Override
+    public String toString() {
+        return organizationName;
+    }
+
 }

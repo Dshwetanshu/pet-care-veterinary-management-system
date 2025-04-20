@@ -1,56 +1,114 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
  */
 package petCare.Organization;
 
-/**
- *
- * @author DWIJ
- */ 
-
+import petCare.Organization.Organization.Type;
+import static petCare.Organization.Organization.Type.InsuranceFinanceOrganization;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author jeelpatel
+ */
 public class OrganizationDirectory {
-    private ArrayList<Organization> organizations;
+    
+    private ArrayList<Organization> organizationList;
 
     public OrganizationDirectory() {
-        organizations = new ArrayList<>();
+        organizationList = new ArrayList();
     }
 
     public ArrayList<Organization> getOrganizations() {
-        return organizations;
+        return organizationList;
     }
-
-    public Organization createOrganization(Organization.Type type) {
-        Organization org = null;
-        switch (type) {
-            case Admin:
-                org = new AdminOrganization(); break;
-            case Accountant:
-                org = new AccountantOrganization(); break;
-            case Manager:
-                org = new ManagerOrganization(); break;
-            case Transport:
-                org = new TransportOrganization(); break;
-            case Veterinarian:
-                org = new VeterinarianOrganization(); break;
-            case Lab:
-                org = new LabOrganization(); break;
-            case InsuranceAgent:
-                org = new InsuranceAgentOrganization(); break;
-            case InsurancePolicyPlanner:
-                org = new InsurancePolicyPlannerOrganization(); break;
-            case InsuranceFinanceOrganization:
-                org = new InsuranceFinanceOrganization(); break;
-            case HealthcareOfficer:
-                org = new HealthcareOfficerOrganization(); break;
-            case Secretary:
-                org = new SecretaryOrganization(); break;
-            case Treasurer:
-                org = new TreasurerOrganization(); break;
+    
+    public Organization createOrganization(Type type){
+        Organization organization = null;
+        
+        //Adding HealthCenter Organizations
+        if (type.getValue().equals(Type.Doctor.getValue())){
+            organization = new DoctorOrganization();
+            organizationList.add(organization);
         }
-        if (org != null) organizations.add(org);
-        return org;
+        else if (type.getValue().equals(Type.Lab.getValue())){
+            organization = new LabAssistantOrganization();
+            organizationList.add(organization);
+        }
+        
+         else if(type.getValue().equals(Type.Patient.getValue()))
+        {
+            organization = new PatientOrganization();
+            organizationList.add(organization);
+                    
+        }
+        
+        else if(type.getValue().equals(Type.Accountant.getValue()))
+        {
+            organization = new AccountantOrganization();
+            organizationList.add(organization);
+                    
+        }
+        
+        //Adding Government Organizations
+        
+        else if(type.getValue().equals(Type.HealthcareOfficer.getValue()))
+        {
+            organization = new HealthOfficerOrganization();
+            organizationList.add(organization);
+                    
+        }
+        
+         else if(type.getValue().equals(Type.Secretary.getValue()))
+        {
+            organization = new SecretaryOrganization();
+            organizationList.add(organization);
+                    
+        }
+         else if(type.getValue().equals(Type.Treasurer.getValue()))
+        {
+            organization = new TreasurerOrganization();
+            organizationList.add(organization);
+                    
+        }
+                //Adding Insurance Organizations
+                
+          else if(type.getValue().equals(Type.InsuranceAgent.getValue()))
+        {
+            organization = new InsAgentOrganization();
+            organizationList.add(organization);
+                    
+        } 
+          else if(type.getValue().equals(Type.InsuranceFinanceOrganization.getValue()))
+        {
+            organization = new InsFinanceOrganization();
+            organizationList.add(organization);
+                    
+        }
+          else if(type.getValue().equals(Type.InsurancePolicyPlanner.getValue()))
+        {
+            organization = new InsPolicyPlannerOrganization();
+            organizationList.add(organization);
+                    
+        }
+          //Adding Pharma Organizations
+        else if(type.getValue().equals(Type.Transport.getValue()))
+        {
+            organization = new TransportOrganization();
+            organizationList.add(organization);
+                    
+        }
+        else if(type.getValue().equals(Type.Manager.getValue()))
+        {
+            organization = new ManagerOrganization();
+            organizationList.add(organization);
+                    
+        }
+        
+        
+
+       
+        return organization;
     }
 }

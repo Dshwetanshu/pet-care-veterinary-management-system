@@ -1,40 +1,33 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package petCare.InsuranceCustomer;
 
-/**
- * 
- * @author DWIJ
- */
-
-
+import petCare.Patient.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author sid
+ */
 public class InsuranceCustomerDirectory {
-    private List<InsuranceCustomer> insuranceCustomerList;
 
-    public InsuranceCustomerDirectory() {
-        insuranceCustomerList = new ArrayList<>();
+    private List<InsuranceCustomer> insuranceCustomers = new ArrayList<>();
+
+    public List<InsuranceCustomer> getInsuranceCustomers() {
+        return insuranceCustomers;
     }
 
-    public List<InsuranceCustomer> getInsuranceCustomerList() {
-        return insuranceCustomerList;
+    public void setInsuranceCustomers(List<InsuranceCustomer> insuranceCustomers) {
+        this.insuranceCustomers = insuranceCustomers;
     }
 
-    public InsuranceCustomer addCustomer(String name, String ssn, String phone, String email) {
-        InsuranceCustomer customer = new InsuranceCustomer();
-        customer.setName(name);
-        customer.setSsn(ssn);
-        customer.setPhone(phone);
-        customer.setEmail(email);
-        insuranceCustomerList.add(customer);
-        return customer;
+    @Override
+    public String toString() {
+        return "InsuranceCustomerDirectory{" + "insuranceCustomers=" + insuranceCustomers + '}';
     }
 
-    public void removeCustomer(InsuranceCustomer customer) {
-        insuranceCustomerList.remove(customer);
-    }
 }

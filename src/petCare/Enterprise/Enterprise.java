@@ -1,9 +1,18 @@
+ /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package petCare.Enterprise;
 
 import petCare.Organization.Organization;
-import petCare.Organization.OrganizationDirectory; 
+import petCare.Organization.OrganizationDirectory;
 import java.util.List;
 
+/**
+ *
+ * @author jeelpatel
+ */
 public abstract class Enterprise extends Organization {
 
     private EnterpriseType enterpriseType;
@@ -17,13 +26,15 @@ public abstract class Enterprise extends Organization {
     }
 
     public enum EnterpriseType {
-        VeterinaryClinic("VeterinaryClinic"),
-        PetInsurance("PetInsurance"),
-        PetRetail("PetRetail");
+
+        HealthCenter("HealthCenter"),
+        InsuranceCompany("InsuranceCompany"),
+        Government("Government"),
+        Pharma("Pharma");
 
         private String value;
 
-        EnterpriseType(String value) {
+        private EnterpriseType(String value) {
             this.value = value;
         }
 
@@ -45,12 +56,12 @@ public abstract class Enterprise extends Organization {
         this.enterpriseType = enterpriseType;
     }
 
-    public Enterprise(String name, EnterpriseType type, int zip, String address) {
+    public Enterprise(String name, EnterpriseType type,int zip,String address) {
         super(name);
         this.enterpriseType = type;
         this.zipcode = zip;
         this.address = address;
-        this.email = "admin@petcare.org";
+        this.email = "gupta.shes@northeastern.edu";
         organizationDirectory = new OrganizationDirectory();
     }
 
@@ -77,6 +88,6 @@ public abstract class Enterprise extends Organization {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
     public abstract List<Organization.Type> getAllOrganizationTypes();
 }

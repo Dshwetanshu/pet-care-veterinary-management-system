@@ -1,25 +1,25 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package petCare.Insurance;
 
 /**
  *
- * @author DWIJ 
+ * @author sid
  */
-
 public class Insurance {
 
     private String policyName;
-    private String insuranceCompany;
+    private String InsuranceCompany;
     private double coverage;
     private String policyTC;
     private double monthlyPremium;
 
-    public Insurance(String policyName, String insuranceCompany, double coverage) {
+    public Insurance(String policyName, String InsuranceCompany, double coverage) {
         this.policyName = policyName;
-        this.insuranceCompany = insuranceCompany;
+        this.InsuranceCompany = InsuranceCompany;
         this.coverage = coverage;
     }
 
@@ -27,9 +27,17 @@ public class Insurance {
         return policyName;
     }
 
-    public void setPolicyName(String policyName) {
-        this.policyName = policyName;
+    public void setPolicyName(String policyType) {
+        this.policyName = policyType;
     }
+
+//    public String getPolicyNumber() {
+//        return policyNumber;
+//    }
+//
+//    public void setPolicyNumber(String policyNumber) {
+//        this.policyNumber = policyNumber;
+//    }
 
     public double getMonthlyPremium() {
         return monthlyPremium;
@@ -40,11 +48,11 @@ public class Insurance {
     }
 
     public String getInsuranceCompany() {
-        return insuranceCompany;
+        return InsuranceCompany;
     }
 
-    public void setInsuranceCompany(String insuranceCompany) {
-        this.insuranceCompany = insuranceCompany;
+    public void setInsuranceCompany(String InsuranceCompany) {
+        this.InsuranceCompany = InsuranceCompany;
     }
 
     public double getCoverage() {
@@ -67,4 +75,5 @@ public class Insurance {
     public String toString() {
         return policyName;
     }
+
 }

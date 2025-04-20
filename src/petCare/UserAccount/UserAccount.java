@@ -1,33 +1,84 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package petCare.UserAccount;
 
 import petCare.Employee.Employee;
-import petCare.Pet.Pet;
+import petCare.Patient.Patient;
 import petCare.Role.Role;
+import petCare.WorkQueue.WorkQueue;
 
+/**
+ *
+ * @author sid
+ */
 public class UserAccount {
+    
     private String username;
     private String password;
     private Employee employee;
     private Role role;
-    private Pet pet;
+    private WorkQueue workQueue;
+    private Patient cus;
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
+    public UserAccount() {
+        workQueue = new WorkQueue();
+    }
+    
+    
+    
+    public String getUsername() {
+        return username;
+    }
 
-    public String getPassword() { return password; }
-    public void setPassword(String password) { this.password = password; }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-    public Employee getEmployee() { return employee; }
-    public void setEmployee(Employee employee) { this.employee = employee; }
+    public String getPassword() {
+        return password;
+    }
 
-    public Role getRole() { return role; }
-    public void setRole(Role role) { this.role = role; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    public Pet getPet() { return pet; }
-    public void setPet(Pet pet) { this.pet = pet; }
+    public Role getRole() {
+        return role;
+    }
 
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public WorkQueue getWorkQueue() {
+        return workQueue;
+    }
+
+    public Patient getCus() {
+        return cus;
+    }
+
+    public void setCus(Patient cus) {
+        this.cus = cus;
+    }
+
+    
+    
     @Override
     public String toString() {
         return username;
     }
+    
+    
+    
 }
