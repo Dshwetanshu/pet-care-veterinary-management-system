@@ -8,6 +8,26 @@ package petCare.Organization;
  *
  * @author DWIJ
  */
-public class InsAgentOrganization {
-    
+import petCare.Role.InsAgentRole;
+import petCare.Role.Role;
+import java.util.ArrayList;
+
+public class InsAgentOrganization extends Organization {
+
+    public InsAgentOrganization() {
+        super(Type.InsuranceAgent.getValue());
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList<>();
+        roles.add(new InsAgentRole());
+        return roles;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.InsuranceAgent;
+    }
 }
+
