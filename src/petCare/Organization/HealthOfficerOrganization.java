@@ -2,31 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Organization;
+package petCare.Organization;
 
 /**
  *
  * @author DWIJ
  */
-import petCare.Role.VeterinarianRole;
+import petCare.Role.GovernmentHealthOfficerRole;
 import petCare.Role.Role;
 import java.util.ArrayList;
 
-public class DoctorOrganization extends Organization {
+public class HealthOfficerOrganization extends Organization {
 
-    public DoctorOrganization() {
-        super(Type.Veterinarian.getValue());
+    public HealthOfficerOrganization() {
+        super(Type.HealthcareOfficer.getValue());
     }
 
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList<>();
-        roles.add(new VeterinarianRole());
+        roles.add(new GovernmentHealthOfficerRole());
         return roles;
     }
 
     @Override
     public Type getType() {
-        return Type.Veterinarian;
+        return Type.HealthcareOfficer;
     }
 }
