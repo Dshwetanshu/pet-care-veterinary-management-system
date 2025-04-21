@@ -1,7 +1,7 @@
 package petCare.Enterprise;
 
 import petCare.Organization.Organization;
-import petCare.Organization.OrganizationDirectory;
+import petCare.Organization.OrganizationDirectory; 
 import java.util.List;
 
 public abstract class Enterprise extends Organization {

@@ -6,7 +6,7 @@ package petCare.Insurance;
 
 /**
  *
- * @author DWIJ
+ * @author DWIJ 
  */
 
 import java.util.ArrayList;
