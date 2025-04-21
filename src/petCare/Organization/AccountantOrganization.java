@@ -6,7 +6,7 @@ package petCare.Organization;
 
 /**
  *
- * @author DWIJ
+ * @author DWIJ 
  */
 
 import petCare.Role.AccountantRole;
